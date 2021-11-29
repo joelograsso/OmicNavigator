@@ -118,11 +118,13 @@ plotStudy <- function(study, modelID, featureID, plotID, testID = NULL, librarie
   if (inherits(returned, "ggplot")) print(returned)
   ## assumptuion: create new metafield called static which stores T/F if plot will
   ## be static or dynamic.
+
   if (dynamic){
     returned <- plotly::plotly_json(returned)
+    #return(returned)
   }
 
-
+  p <- returned
   return(invisible(study))
 }
 
